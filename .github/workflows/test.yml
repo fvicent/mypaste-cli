@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          apt install -y gnome-keyring python3-venv python3-dev
+          sudo apt install -y gnome-keyring python3-venv python3-dev
           python -m pip install --upgrade pip
           pip install pytest pytest-env responses
           pip install .
