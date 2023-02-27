@@ -9,7 +9,7 @@ dependencies = ["typer", "rich", "requests", "keyring"]
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-tests = ["pytest", "pytest-env"]
+tests = ["pytest", "pytest-env", "responses"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
