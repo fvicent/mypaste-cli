@@ -1,0 +1,24 @@
+[project]
+name = "mypaste"
+version = "0.0.1"
+authors = [
+  { name="Francisco Vicent", email="franciscovicent@outlook.com" },
+]
+description = "MyPaste CLI"
+dependencies = ["typer", "rich", "requests", "keyring"]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-env"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+mypaste = "mypaste.cli:app"
+
+[tool.pytest.ini_options]
+env = [
+    "MYPASTE_CLI_KEYRING_SERVICE_NAME=mypaste-cli-test",
+]
