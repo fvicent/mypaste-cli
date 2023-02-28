@@ -1,13 +1,16 @@
 from pathlib import Path
 
 from typer.testing import CliRunner
+import keyring
 
-from requestsmocks import *
+from memorykeyring import MemoryKeyring
 from mypaste.cli import app
 from mypaste import __version__, keymgr
+from requestsmocks import *
 
 
 runner = CliRunner()
+keyring.set_keyring(MemoryKeyring())    # type: ignore
 
 
 def invoke_and_find(filename: str, api_key: str, string: str) -> None:
