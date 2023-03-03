@@ -57,13 +57,12 @@ def upload(file: Path,
             )
         if store_key:
             store_api_key(api_key)
+    elif api_key:
+        # If a new API key is passed, drop the old one.
+        store_api_key(api_key)
     else:
-        if api_key:
-            # If a new API key is passed, drop the old one.
-            store_api_key(api_key)
-        else:
-            # Work with the stored key.
-            api_key = stored_api_key
+        # Work with the stored key.
+        api_key = stored_api_key
     
     try:
         result = api.upload(file, api_key)
