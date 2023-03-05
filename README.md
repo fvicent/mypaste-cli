@@ -1,5 +1,7 @@
 # mypaste-cli
 
+![Tests](https://github.com/fvicent/mypaste-cli/actions/workflows/test.yml/badge.svg)
+
 CLI for uploading files to [mypaste.dev](https://www.mypaste.dev) directly from the terminal.
 
 # Usage
